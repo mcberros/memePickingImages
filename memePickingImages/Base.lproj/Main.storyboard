@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12L-Pd-KH8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12L-Pd-KH8">
                                 <rect key="frame" x="180" y="90" width="240" height="212"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BoC-jx-Coa">
@@ -58,7 +58,8 @@
                         <constraints>
                             <constraint firstItem="GvE-eF-AGK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="18C-Q8-6zp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BoC-jx-Coa" secondAttribute="trailing" constant="-20" id="28L-wT-fvk"/>
-                            <constraint firstItem="BoC-jx-Coa" firstAttribute="top" secondItem="12L-Pd-KH8" secondAttribute="bottom" id="2UV-5a-f2L"/>
+                            <constraint firstItem="12L-Pd-KH8" firstAttribute="bottom" secondItem="BoC-jx-Coa" secondAttribute="top" id="2UV-5a-f2L"/>
+                            <constraint firstItem="12L-Pd-KH8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="CB8-Jp-VDG"/>
                             <constraint firstItem="GvE-eF-AGK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="FEw-Gv-aSl"/>
                             <constraint firstItem="Blx-TW-8Jw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="MZh-aW-9vZ"/>
                             <constraint firstItem="BoC-jx-Coa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Sf8-Sc-KWa"/>
