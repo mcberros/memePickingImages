@@ -39,15 +39,15 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GvE-eF-AGK">
-                                <rect key="frame" x="243" y="36" width="106" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GvE-eF-AGK">
+                                <rect key="frame" x="180" y="36" width="240" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Blx-TW-8Jw">
-                                <rect key="frame" x="208" y="467" width="177" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Blx-TW-8Jw">
+                                <rect key="frame" x="180" y="467" width="240" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -56,15 +56,17 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GvE-eF-AGK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="18C-Q8-6zp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BoC-jx-Coa" secondAttribute="trailing" constant="-20" id="28L-wT-fvk"/>
                             <constraint firstItem="BoC-jx-Coa" firstAttribute="top" secondItem="12L-Pd-KH8" secondAttribute="bottom" constant="254" id="2UV-5a-f2L"/>
-                            <constraint firstItem="Blx-TW-8Jw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Cf-SN-sx8"/>
-                            <constraint firstItem="GvE-eF-AGK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CWo-aj-zJS"/>
+                            <constraint firstItem="GvE-eF-AGK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="FEw-Gv-aSl"/>
+                            <constraint firstItem="Blx-TW-8Jw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="MZh-aW-9vZ"/>
                             <constraint firstItem="BoC-jx-Coa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Sf8-Sc-KWa"/>
                             <constraint firstItem="12L-Pd-KH8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="ZnQ-Da-xSv"/>
                             <constraint firstItem="12L-Pd-KH8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZtL-Im-cNu"/>
-                            <constraint firstItem="GvE-eF-AGK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="rLc-Is-QNZ"/>
+                            <constraint firstItem="Blx-TW-8Jw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vgi-on-syq"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BoC-jx-Coa" secondAttribute="bottom" id="xtf-db-oxZ"/>
+                            <constraint firstItem="GvE-eF-AGK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y2Z-7E-yZT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Blx-TW-8Jw" secondAttribute="bottom" constant="103" id="zJU-gx-gVb"/>
                         </constraints>
                     </view>
