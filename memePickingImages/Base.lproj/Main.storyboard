@@ -58,7 +58,11 @@
                                 <rect key="frame" x="-6" y="0.0" width="606" height="44"/>
                                 <items>
                                     <navigationItem id="zYW-pd-Q4h">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="d3R-mO-Nna"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="d3R-mO-Nna">
+                                            <connections>
+                                                <action selector="startActivityView:" destination="BYZ-38-t0r" id="mhK-3z-Xyu"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="Pvg-sf-dyN"/>
                                     </navigationItem>
                                 </items>
