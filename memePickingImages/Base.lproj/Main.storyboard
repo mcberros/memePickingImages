@@ -55,9 +55,12 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xX-ho-Gzk">
-                                <rect key="frame" x="-6" y="-8" width="606" height="44"/>
+                                <rect key="frame" x="-6" y="0.0" width="606" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="zYW-pd-Q4h"/>
+                                    <navigationItem id="zYW-pd-Q4h">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="d3R-mO-Nna"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="Pvg-sf-dyN"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -68,7 +71,7 @@
                             <constraint firstItem="3xX-ho-Gzk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-26" id="8zr-5A-sXd"/>
                             <constraint firstItem="12L-Pd-KH8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="CB8-Jp-VDG"/>
                             <constraint firstItem="GvE-eF-AGK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="FEw-Gv-aSl"/>
-                            <constraint firstItem="3xX-ho-Gzk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-8" id="O2Q-F0-P4p"/>
+                            <constraint firstItem="3xX-ho-Gzk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="O2Q-F0-P4p"/>
                             <constraint firstItem="GvE-eF-AGK" firstAttribute="top" secondItem="3xX-ho-Gzk" secondAttribute="bottom" constant="50" id="Pmq-ec-Qnu"/>
                             <constraint firstItem="BoC-jx-Coa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Sf8-Sc-KWa"/>
                             <constraint firstItem="12L-Pd-KH8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZtL-Im-cNu"/>
@@ -81,7 +84,6 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Blx-TW-8Jw" secondAttribute="bottom" constant="103" id="zJU-gx-gVb"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="bottonText" destination="Blx-TW-8Jw" id="D9g-Rj-T2u"/>
                         <outlet property="cameraButton" destination="ppO-ZM-WzB" id="XfI-LR-4xF"/>
