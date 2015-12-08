@@ -54,7 +54,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3xX-ho-Gzk">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xX-ho-Gzk">
                                 <rect key="frame" x="-6" y="-8" width="606" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="zYW-pd-Q4h"/>
@@ -63,19 +63,16 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GvE-eF-AGK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="18C-Q8-6zp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BoC-jx-Coa" secondAttribute="trailing" constant="-20" id="28L-wT-fvk"/>
                             <constraint firstItem="12L-Pd-KH8" firstAttribute="bottom" secondItem="BoC-jx-Coa" secondAttribute="top" id="2UV-5a-f2L"/>
-                            <constraint firstItem="GvE-eF-AGK" firstAttribute="top" secondItem="3xX-ho-Gzk" secondAttribute="bottom" id="2jV-gs-0en"/>
                             <constraint firstItem="3xX-ho-Gzk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-26" id="8zr-5A-sXd"/>
-                            <constraint firstItem="GvE-eF-AGK" firstAttribute="top" secondItem="3xX-ho-Gzk" secondAttribute="bottom" id="Ahu-wY-7a3"/>
                             <constraint firstItem="12L-Pd-KH8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="CB8-Jp-VDG"/>
                             <constraint firstItem="GvE-eF-AGK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="FEw-Gv-aSl"/>
                             <constraint firstItem="3xX-ho-Gzk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-8" id="O2Q-F0-P4p"/>
-                            <constraint firstItem="GvE-eF-AGK" firstAttribute="top" secondItem="3xX-ho-Gzk" secondAttribute="bottom" id="Pmq-ec-Qnu"/>
+                            <constraint firstItem="GvE-eF-AGK" firstAttribute="top" secondItem="3xX-ho-Gzk" secondAttribute="bottom" constant="50" id="Pmq-ec-Qnu"/>
                             <constraint firstItem="BoC-jx-Coa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Sf8-Sc-KWa"/>
-                            <constraint firstItem="12L-Pd-KH8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ZnQ-Da-xSv"/>
                             <constraint firstItem="12L-Pd-KH8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZtL-Im-cNu"/>
+                            <constraint firstItem="12L-Pd-KH8" firstAttribute="top" secondItem="3xX-ho-Gzk" secondAttribute="bottom" id="cNP-EJ-F3S"/>
                             <constraint firstItem="Blx-TW-8Jw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.95" id="jWf-xM-xya"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3xX-ho-Gzk" secondAttribute="trailing" constant="-20" id="kv1-gu-mOB"/>
                             <constraint firstItem="Blx-TW-8Jw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vgi-on-syq"/>
