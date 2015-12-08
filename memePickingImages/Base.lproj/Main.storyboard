@@ -54,10 +54,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xX-ho-Gzk">
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3xX-ho-Gzk">
                                 <rect key="frame" x="-6" y="-8" width="606" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="Hgk-Td-7Yy"/>
+                                    <navigationItem title="Title" id="zYW-pd-Q4h"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -84,6 +84,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Blx-TW-8Jw" secondAttribute="bottom" constant="103" id="zJU-gx-gVb"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="bottonText" destination="Blx-TW-8Jw" id="D9g-Rj-T2u"/>
                         <outlet property="cameraButton" destination="ppO-ZM-WzB" id="XfI-LR-4xF"/>
@@ -93,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="440" y="389"/>
+            <point key="canvasLocation" x="380" y="380"/>
         </scene>
     </scenes>
 </document>
