@@ -28,14 +28,14 @@
                                     <constraint firstAttribute="height" constant="44" id="97F-je-OH3"/>
                                 </constraints>
                                 <items>
+                                    <barButtonItem systemItem="camera" id="ppO-ZM-WzB">
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="tO3-qI-wPr"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Album" id="VWp-3I-KS6">
                                         <connections>
                                             <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="oxQ-IG-Jei"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Camera" id="ppO-ZM-WzB">
-                                        <connections>
-                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="tO3-qI-wPr"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
