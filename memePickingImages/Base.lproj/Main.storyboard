@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12L-Pd-KH8">
+                                <rect key="frame" x="180" y="177" width="240" height="212"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GvE-eF-AGK">
                                 <rect key="frame" x="180" y="100" width="240" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -31,17 +34,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12L-Pd-KH8">
-                                <rect key="frame" x="180" y="177" width="240" height="212"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="12L-Pd-KH8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="J3G-4P-s1n"/>
                             <constraint firstItem="GvE-eF-AGK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="KmR-qF-xOD"/>
                             <constraint firstItem="12L-Pd-KH8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OW9-Dl-G4V"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Blx-TW-8Jw" secondAttribute="bottom" constant="59" id="VEb-K8-b9X"/>
                             <constraint firstItem="GvE-eF-AGK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XQ1-5S-b7L"/>
                             <constraint firstItem="Blx-TW-8Jw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b92-Rh-037"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="12L-Pd-KH8" secondAttribute="bottom" id="jq7-M6-vG8"/>
+                            <constraint firstItem="12L-Pd-KH8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wzd-zy-GtY"/>
                         </constraints>
                     </view>
                     <toolbarItems>
