@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottonText: UITextField!
     @IBOutlet weak var shareAction: UIBarButtonItem!
 
-    let memeTextAttributes = [
+    private let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
@@ -74,7 +74,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.presentViewController(controller, animated: true, completion: nil)
     }
 
-    func saveMemeAfterSharing(activity: String?, completed: Bool, items: [AnyObject]?, err: NSError?) -> Void {
+    private func saveMemeAfterSharing(activity: String?, completed: Bool, items: [AnyObject]?, err: NSError?) -> Void {
         if completed {
             self.save()
             self.dismissViewControllerAnimated(true, completion: nil)
@@ -119,18 +119,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
 
-    func getKeyboardHeight(notification: NSNotification) -> CGFloat{
+    private func getKeyboardHeight(notification: NSNotification) -> CGFloat{
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.CGRectValue().height
     }
 
-    func subscribeToKeyboardNotifications() {
+    private func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
 
-    func unsubscribeFromKeyboardNotifications() {
+    private func unsubscribeFromKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
 
@@ -143,7 +143,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
 
-    func generateMemedImage() -> UIImage {
+    private func generateMemedImage() -> UIImage {
 
         // TODO: Hide toolbar and navbar
         self.navigationController?.setToolbarHidden(true, animated: true)
@@ -164,7 +164,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
 
-    func save() {
+    private func save() {
         //Create the meme
         _ = Meme(topText: topText.text!, bottonText: bottonText.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
     }
