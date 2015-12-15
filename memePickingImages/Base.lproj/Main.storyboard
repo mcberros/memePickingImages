@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -37,11 +38,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GvE-eF-AGK" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="Eyv-bb-x5O"/>
                             <constraint firstItem="12L-Pd-KH8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="J3G-4P-s1n"/>
                             <constraint firstItem="GvE-eF-AGK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="KmR-qF-xOD"/>
                             <constraint firstItem="12L-Pd-KH8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OW9-Dl-G4V"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Blx-TW-8Jw" secondAttribute="bottom" constant="59" id="VEb-K8-b9X"/>
                             <constraint firstItem="GvE-eF-AGK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XQ1-5S-b7L"/>
+                            <constraint firstItem="Blx-TW-8Jw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="ZEd-Qo-ngn"/>
                             <constraint firstItem="Blx-TW-8Jw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b92-Rh-037"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="12L-Pd-KH8" secondAttribute="bottom" id="jq7-M6-vG8"/>
                             <constraint firstItem="12L-Pd-KH8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wzd-zy-GtY"/>

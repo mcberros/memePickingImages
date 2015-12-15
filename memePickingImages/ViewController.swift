@@ -28,13 +28,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         topText.text = "TOP"
-        topText.textAlignment = .Center
         topText.delegate = self
         topText.defaultTextAttributes = memeTextAttributes
+        topText.textAlignment = .Center
+
         bottonText.text = "BOTTOM"
-        bottonText.textAlignment = .Center
         bottonText.delegate = self
         bottonText.defaultTextAttributes = memeTextAttributes
+        bottonText.textAlignment = .Center
     }
 
     override func viewWillAppear(animated: Bool) {
