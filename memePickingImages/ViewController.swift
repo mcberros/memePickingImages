@@ -43,6 +43,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         self.subscribeToKeyboardNotifications()
         shareAction.enabled = false
+        UIApplication.sharedApplication().statusBarHidden=true;
     }
 
     override func viewWillDisappear(animated: Bool) {
