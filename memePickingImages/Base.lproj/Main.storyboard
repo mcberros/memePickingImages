@@ -51,16 +51,19 @@
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Album" id="VWp-3I-KS6">
-                            <connections>
-                                <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="oxQ-IG-Jei"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="wSc-bR-9aD"/>
                         <barButtonItem systemItem="camera" id="ppO-ZM-WzB">
                             <connections>
                                 <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="tO3-qI-wPr"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="c7C-Yk-paw"/>
+                        <barButtonItem title="Album" id="VWp-3I-KS6">
+                            <connections>
+                                <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="oxQ-IG-Jei"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="FEm-dX-czf"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="zYW-pd-Q4h">
                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="d3R-mO-Nna">
