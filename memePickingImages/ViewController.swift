@@ -40,7 +40,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         self.subscribeToKeyboardNotifications()
         shareAction.enabled = false
-        UIApplication.sharedApplication().statusBarHidden = true;
+        UIApplication.sharedApplication().statusBarHidden = true
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -67,12 +67,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     func imagePickerController(picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [String: AnyObject]) {
-            if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-                imagePickerView.image = image
-                self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                    self.shareAction.enabled = true
-                });
-            }
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imagePickerView.image = image
+            self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                self.shareAction.enabled = true
+            });
+        }
     }
 
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -132,7 +132,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     private func generateMemedImage() -> UIImage {
 
-        // TODO: Hide toolbar and navbar
         self.navigationController?.setToolbarHidden(true, animated: true)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
 
@@ -144,7 +143,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
-        // TODO:  Show toolbar and navbar
         self.navigationController?.setToolbarHidden(false, animated: true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
