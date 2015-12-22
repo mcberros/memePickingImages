@@ -13,7 +13,7 @@ class Meme {
     private var topText: String!
     private var bottonText: String!
     private var originalImage: UIImage!
-    var memedImage: UIImage!
+    private var memedImage: UIImage!
 
     init(topText: String, bottonText: String, originalImage: UIImage, memedImage: UIImage){
         self.topText = topText

@@ -18,10 +18,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var shareAction: UIBarButtonItem!
 
     private let memeTextAttributes = [
-        NSStrokeColorAttributeName : UIColor.blackColor(),
-        NSForegroundColorAttributeName : UIColor.whiteColor(),
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : -4
+        NSStrokeColorAttributeName: UIColor.blackColor(),
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSStrokeWidthAttributeName: -4
     ]
 
     // Text Field Delegate object
@@ -40,7 +40,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         self.subscribeToKeyboardNotifications()
         shareAction.enabled = false
-        UIApplication.sharedApplication().statusBarHidden=true;
+        UIApplication.sharedApplication().statusBarHidden = true;
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -66,7 +66,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     func imagePickerController(picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        didFinishPickingMediaWithInfo info: [String: AnyObject]) {
             if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
                 imagePickerView.image = image
                 self.dismissViewControllerAnimated(true, completion: { () -> Void in
@@ -128,7 +128,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     private func unsubscribeFromKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
-
     }
 
     private func generateMemedImage() -> UIImage {
@@ -141,7 +140,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame,
             afterScreenUpdates: true)
-        let memedImage : UIImage =
+        let memedImage: UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
@@ -157,4 +156,3 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         _ = Meme(topText: topText.text!, bottonText: bottonText.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
     }
 }
-
