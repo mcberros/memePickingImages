@@ -53,18 +53,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        pickAnImageFromSource(UIImagePickerControllerSourceType.PhotoLibrary)
     }
 
 
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        pickAnImageFromSource(UIImagePickerControllerSourceType.Camera)
     }
 
 
@@ -73,6 +67,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         controller.completionWithItemsHandler = saveMemeAfterSharing
         self.presentViewController(controller, animated: true, completion: nil)
+    }
+
+    private func pickAnImageFromSource(sourceType: UIImagePickerControllerSourceType){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = sourceType
+        self.presentViewController(imagePicker, animated: true, completion: nil)
     }
 
     private func saveMemeAfterSharing(activity: String?, completed: Bool, items: [AnyObject]?, err: NSError?) -> Void {
