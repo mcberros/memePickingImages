@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 
     @IBOutlet weak var imagePickerView: UIImageView!
@@ -24,19 +24,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSStrokeWidthAttributeName : -4
     ]
 
+    // Text Field Delegate object
+    private let memeTextDelegate = MemeTextFieldDelegate()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
         setTextField(topText, initialText: "TOP")
         setTextField(bottonText, initialText: "BOTTOM")
-    }
-
-    private func setTextField(textField: UITextField, initialText: String) {
-        textField.text = initialText
-        textField.delegate = self
-        textField.defaultTextAttributes = memeTextAttributes
-        textField.textAlignment = .Center
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -69,20 +65,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.presentViewController(controller, animated: true, completion: nil)
     }
 
-    private func pickAnImageFromSource(sourceType: UIImagePickerControllerSourceType){
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = sourceType
-        self.presentViewController(imagePicker, animated: true, completion: nil)
-    }
-
-    private func saveMemeAfterSharing(activity: String?, completed: Bool, items: [AnyObject]?, err: NSError?) -> Void {
-        if completed {
-            self.save()
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
-    }
-
     func imagePickerController(picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [String : AnyObject]) {
             if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -97,27 +79,38 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.dismissViewControllerAnimated(true, completion: {});
     }
 
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        var newText: NSString = textField.text!
-        newText = newText.stringByReplacingCharactersInRange(range, withString: string)
-        return true
-    }
-
-    func textFieldDidBeginEditing(textField: UITextField) {
-        if textField.text == "TOP" || textField.text == "BOTTOM" {
-            textField.text = ""
-        }
-    }
-
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-
     // Move view frame up
     func keyboardWillShow(notification: NSNotification) {
         if bottonText.isFirstResponder() && view.frame.origin.y == 0 {
             self.view.frame.origin.y -= getKeyboardHeight(notification)
+        }
+    }
+
+    // Move view frame down
+    func keyboardWillHide(notification: NSNotification) {
+        if bottonText.isFirstResponder() {
+            self.view.frame.origin.y += getKeyboardHeight(notification)
+        }
+    }
+
+    private func setTextField(textField: UITextField, initialText: String) {
+        textField.text = initialText
+        textField.delegate = memeTextDelegate
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .Center
+    }
+
+    private func pickAnImageFromSource(sourceType: UIImagePickerControllerSourceType){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = sourceType
+        self.presentViewController(imagePicker, animated: true, completion: nil)
+    }
+
+    private func saveMemeAfterSharing(activity: String?, completed: Bool, items: [AnyObject]?, err: NSError?) -> Void {
+        if completed {
+            self.save()
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
 
@@ -136,13 +129,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
 
-    }
-
-    // Move view frame down
-    func keyboardWillHide(notification: NSNotification) {
-        if bottonText.isFirstResponder() {
-            self.view.frame.origin.y += getKeyboardHeight(notification)
-        }
     }
 
     private func generateMemedImage() -> UIImage {
