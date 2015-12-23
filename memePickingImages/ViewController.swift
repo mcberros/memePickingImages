@@ -38,14 +38,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(animated: Bool) {
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
 
-        self.subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotifications()
         shareAction.enabled = false
         UIApplication.sharedApplication().statusBarHidden = true
     }
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.unsubscribeFromKeyboardNotifications()
+        unsubscribeFromKeyboardNotifications()
     }
 
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
@@ -62,34 +62,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let image = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         controller.completionWithItemsHandler = saveMemeAfterSharing
-        self.presentViewController(controller, animated: true, completion: nil)
+        presentViewController(controller, animated: true, completion: nil)
     }
 
     func imagePickerController(picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [String: AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerView.image = image
-            self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            dismissViewControllerAnimated(true, completion: { () -> Void in
                 self.shareAction.enabled = true
             });
         }
     }
 
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.dismissViewControllerAnimated(true, completion: {});
+        dismissViewControllerAnimated(true, completion: {});
     }
 
     // Move view frame up
     func keyboardWillShow(notification: NSNotification) {
         if bottonText.isFirstResponder() && view.frame.origin.y == 0 {
-            self.view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y -= getKeyboardHeight(notification)
         }
     }
 
     // Move view frame down
     func keyboardWillHide(notification: NSNotification) {
         if bottonText.isFirstResponder() {
-            self.view.frame.origin.y += getKeyboardHeight(notification)
+            view.frame.origin.y += getKeyboardHeight(notification)
         }
     }
 
@@ -104,13 +104,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = sourceType
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
 
     private func saveMemeAfterSharing(activity: String?, completed: Bool, items: [AnyObject]?, err: NSError?) -> Void {
         if completed {
-            self.save()
-            self.dismissViewControllerAnimated(true, completion: nil)
+            save()
+            dismissViewControllerAnimated(true, completion: nil)
         }
     }
 
@@ -132,19 +132,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     private func generateMemedImage() -> UIImage {
 
-        self.navigationController?.setToolbarHidden(true, animated: true)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setToolbarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
 
         // Render view to an image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawViewHierarchyInRect(self.view.frame,
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawViewHierarchyInRect(view.frame,
             afterScreenUpdates: true)
         let memedImage: UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
-        self.navigationController?.setToolbarHidden(false, animated: true)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setToolbarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
         
         return memedImage
     }
